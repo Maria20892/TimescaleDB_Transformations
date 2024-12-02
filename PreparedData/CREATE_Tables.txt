@@ -1,0 +1,17 @@
+CREATE TABLE Timeseries (
+       id VARCHAR PRIMARY KEY,
+       original_timeseries_id VARCHAR,
+       type VARCHAR(50),
+       measure_id INT,
+       source VARCHAR(100),
+       additional_properties JSONB
+);
+
+
+CREATE TABLE Signal_Values_timestamp (
+         timeseries_id VARCHAR,
+         timestamp TIMESTAMPTZ,
+         value FLOAT,
+         additional_properties VARCHAR,
+         FOREIGN KEY (timeseries_id) REFERENCES Timeseries(id)
+);
