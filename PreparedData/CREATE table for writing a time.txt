@@ -1,0 +1,8 @@
+ CREATE TABLE query_execution_log (
+     id SERIAL PRIMARY KEY,
+     query_name TEXT,
+     execution_time INTERVAL
+ );
+
+SELECT * FROM query_execution_log;
+-- DELETE FROM query_execution_log;

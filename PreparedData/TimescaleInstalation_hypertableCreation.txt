@@ -1,0 +1,4 @@
+CREATE EXTENSION IF NOT EXISTS timescaledb;
+SELECT create_hypertable('Signal_Values_timestamp', 'timestamp', true);
+
+--true stands for migrating data, as Signal_Values_Timestamp has data in it already
